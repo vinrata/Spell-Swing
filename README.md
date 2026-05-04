@@ -5,6 +5,11 @@ SpellSwing is a browser-playable multiplayer turn-based RPG built with Phaser 3,
 
 The project is currently an MVP/work-in-progress game jam build focused on proving the full loop from website entry to multiplayer combat and back to the hub.
 
+
+![Description](./CharacterSelection.gif)   
+
+
+
 ## Features
 
 - Shared online hub where connected players can see each other move around.
