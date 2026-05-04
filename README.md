@@ -6,7 +6,7 @@ SpellSwing is a browser-playable multiplayer turn-based RPG built with Phaser 3,
 The project is currently an MVP/work-in-progress game jam build focused on proving the full loop from website entry to multiplayer combat and back to the hub.
 
 
-![Description](./CharacterSelection.gif)   
+![Character_Selection](./CharacterSelection.gif)   
 
 
 
@@ -19,6 +19,9 @@ The project is currently an MVP/work-in-progress game jam build focused on provi
 - Swings, typed spells, items, defending, passing, status effects, XP, gold, leveling, shops, blessings, and boss encounters.
 - Phaser-powered scenes for entry, character select, hub, lobby, run/combat, rewards, and results.
 - Vibe Jam portal integration from the browser shell.
+
+
+![combat](./CombatExample.gif)  
 
 ## Tech Stack
 
