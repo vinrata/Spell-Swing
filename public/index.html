@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spell Swing</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script async src="https://vibej.am/2026/widget.js"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="hero-copy">
+        <div class="hero-title-row">
+          <h1>Spell Swing</h1>
+          <a
+            class="vibejam-next-link"
+            href="https://vibej.am/portal/2026"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Click to go to next vibejam game
+          </a>
+        </div>
+      </div>
+
+      <div class="game-shell">
+        <div id="game"></div>
+        <button id="settings-access-btn" class="settings-access-btn" type="button" aria-label="Open settings" aria-pressed="false" aria-haspopup="dialog">
+          <span class="settings-access-speaker-icon" aria-hidden="true">&#x1F50A;</span>
+          <span class="settings-access-gear-icon" aria-hidden="true">&#x2699;&#xFE0F;</span>
+        </button>
+        <div id="menu-overlay" class="menu-overlay"></div>
+        <div id="stage-intro-overlay" class="stage-intro-overlay" aria-hidden="true"></div>
+        <div id="turn-overlay" class="turn-overlay"></div>
+        <div id="reward-overlay" class="reward-overlay" aria-hidden="true"></div>
+        <div id="top-hud" class="top-hud"></div>
+        <div id="combat-info" class="combat-info"></div>
+        <div id="combat-hud" class="combat-hud"></div>
+        <div id="lobby-actions" class="lobby-actions"></div>
+        <svg id="targeting-arrow-overlay" class="targeting-arrow-overlay" aria-hidden="true"></svg>
+        <svg id="enemy-intent-overlay" class="enemy-intent-overlay" aria-hidden="true"></svg>
+        <div id="toast"></div>
+        <div id="modal-root" class="modal-root" aria-hidden="true"></div>
+      </div>
+
+      <div id="ui" class="ui-shell"></div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/vendor/phaser.min.js"></script>
+    <script src="/vendor/rex-plugins/rexuiplugin.min.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

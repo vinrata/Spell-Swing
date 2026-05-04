@@ -1,0 +1,444 @@
+{
+  "_meta": {
+    "description": "Catalog of all swings (basic attacks) and spells available in SpellSwing.",
+    "source": "server.js",
+    "notes": [
+      "Swings are physical attacks available to all characters. Damage scales with character level.",
+      "Spells are typed magical attacks. Each character starts knowing two spells (their starter pair) and can learn more from shops/level-ups.",
+      "Spell damage uses the type chart (see type_chart.json) for super effective / not very effective multipliers.",
+      "Charged and Power swings combine physical damage with the character's typed magical damage."
+    ]
+  },
+
+  "swings": [
+    {
+      "id": "basic",
+      "name": "Basic Swing",
+      "energyCost": 1,
+      "manaCost": 0,
+      "target": "single",
+      "baseDamage": 12,
+      "damageFormula": "12 + (level - 1) * 4 + swing flat bonuses",
+      "damageType": "physical",
+      "description": "Standard physical attack on one enemy. Successful swings have a 25% chance to apply Bleed."
+    },
+    {
+      "id": "charged",
+      "name": "Charged Swing",
+      "energyCost": 2,
+      "manaCost": 1,
+      "target": "single",
+      "baseDamage": 20,
+      "damageFormula": "20 + (level - 1) * 5 + swing flat bonuses",
+      "damageType": "split (50% physical / 50% typed magic)",
+      "description": "A charged strike that mixes physical force with the wielder's elemental type. Successful swings have a 25% chance to apply Bleed."
+    },
+    {
+      "id": "power",
+      "name": "Power Swing",
+      "energyCost": 3,
+      "manaCost": 2,
+      "target": "single",
+      "baseDamage": 30,
+      "damageFormula": "30 + (level - 1) * 6 + swing flat bonuses",
+      "damageType": "split (40% physical / 60% typed magic)",
+      "description": "A heavy elemental swing with strong type interactions. Successful swings have a 25% chance to apply Bleed."
+    }
+  ],
+
+  "spells": [
+    {
+      "id": "ember_shot",
+      "name": "Ember Shot",
+      "type": "Fire",
+      "energyCost": 0,
+      "manaCost": 1,
+      "levelRequired": 1,
+      "target": "single",
+      "price": 50,
+      "description": "15 fire damage to one enemy."
+    },
+    {
+      "id": "flame_burst",
+      "name": "Flame Burst",
+      "type": "Fire",
+      "energyCost": 0,
+      "manaCost": 2,
+      "levelRequired": 1,
+      "target": "all",
+      "price": 50,
+      "description": "20 fire damage to all enemies."
+    },
+    {
+      "id": "ignite",
+      "name": "Ignite",
+      "type": "Fire",
+      "energyCost": 0,
+      "manaCost": 1,
+      "levelRequired": 2,
+      "target": "single",
+      "price": 50,
+      "description": "100% chance to apply Burn for 3 turns."
+    },
+    {
+      "id": "inferno",
+      "name": "Inferno",
+      "type": "Fire",
+      "energyCost": 0,
+      "manaCost": 3,
+      "levelRequired": 3,
+      "target": "all",
+      "price": 90,
+      "description": "40 fire damage to all enemies and apply Burn."
+    },
+    {
+      "id": "meteor",
+      "name": "Meteor",
+      "type": "Fire",
+      "energyCost": 0,
+      "manaCost": 3,
+      "levelRequired": 4,
+      "target": "single",
+      "price": 140,
+      "description": "60 fire damage and stun one enemy."
+    },
+
+    {
+      "id": "toxic_bolt",
+      "name": "Toxic Bolt",
+      "type": "Poison",
+      "energyCost": 0,
+      "manaCost": 1,
+      "levelRequired": 1,
+      "target": "single",
+      "price": 50,
+      "description": "15 poison damage to one enemy."
+    },
+    {
+      "id": "noxious_cloud",
+      "name": "Noxious Cloud",
+      "type": "Poison",
+      "energyCost": 0,
+      "manaCost": 2,
+      "levelRequired": 1,
+      "target": "all",
+      "price": 50,
+      "description": "20 poison damage to all enemies."
+    },
+
+    {
+      "id": "water_jet",
+      "name": "Water Jet",
+      "type": "Water",
+      "energyCost": 0,
+      "manaCost": 1,
+      "levelRequired": 1,
+      "target": "single",
+      "price": 50,
+      "description": "15 water damage to one enemy."
+    },
+    {
+      "id": "tidal_surge",
+      "name": "Tidal Surge",
+      "type": "Water",
+      "energyCost": 0,
+      "manaCost": 2,
+      "levelRequired": 1,
+      "target": "all",
+      "price": 55,
+      "description": "20 water damage to all enemies."
+    },
+    {
+      "id": "whirlpool",
+      "name": "Whirlpool",
+      "type": "Water",
+      "energyCost": 0,
+      "manaCost": 2,
+      "levelRequired": 2,
+      "target": "single",
+      "price": 80,
+      "description": "30 water damage and stun one enemy."
+    },
+    {
+      "id": "tsunami",
+      "name": "Tsunami",
+      "type": "Water",
+      "energyCost": 0,
+      "manaCost": 3,
+      "levelRequired": 3,
+      "target": "all",
+      "price": 110,
+      "description": "40 water damage to all enemies."
+    },
+
+    {
+      "id": "stone_spike",
+      "name": "Stone Spike",
+      "type": "Earth",
+      "energyCost": 0,
+      "manaCost": 1,
+      "levelRequired": 1,
+      "target": "single",
+      "price": 50,
+      "description": "15 earth damage to one enemy."
+    },
+    {
+      "id": "sand_blast",
+      "name": "Sand Blast",
+      "type": "Earth",
+      "energyCost": 0,
+      "manaCost": 2,
+      "levelRequired": 1,
+      "target": "all",
+      "price": 55,
+      "description": "20 earth damage to all enemies."
+    },
+    {
+      "id": "quicksand",
+      "name": "Quicksand",
+      "type": "Earth",
+      "energyCost": 0,
+      "manaCost": 2,
+      "levelRequired": 2,
+      "target": "single",
+      "price": 80,
+      "description": "30 earth damage and stun one enemy."
+    },
+    {
+      "id": "earthquake",
+      "name": "Earthquake",
+      "type": "Earth",
+      "energyCost": 0,
+      "manaCost": 3,
+      "levelRequired": 3,
+      "target": "all",
+      "price": 110,
+      "description": "40 earth damage to all enemies."
+    },
+
+    {
+      "id": "gust_slash",
+      "name": "Gust Slash",
+      "type": "Wind",
+      "energyCost": 0,
+      "manaCost": 1,
+      "levelRequired": 1,
+      "target": "single",
+      "price": 50,
+      "description": "15 wind damage to one enemy."
+    },
+    {
+      "id": "feather_storm",
+      "name": "Feather Storm",
+      "type": "Wind",
+      "energyCost": 0,
+      "manaCost": 2,
+      "levelRequired": 1,
+      "target": "all",
+      "price": 55,
+      "description": "20 wind damage to all enemies."
+    },
+    {
+      "id": "updraft",
+      "name": "Updraft",
+      "type": "Wind",
+      "energyCost": 0,
+      "manaCost": 2,
+      "levelRequired": 2,
+      "target": "single",
+      "price": 80,
+      "description": "30 wind damage and stun one enemy."
+    },
+    {
+      "id": "tempest",
+      "name": "Tempest",
+      "type": "Wind",
+      "energyCost": 0,
+      "manaCost": 3,
+      "levelRequired": 3,
+      "target": "all",
+      "price": 110,
+      "description": "40 wind damage to all enemies."
+    },
+
+    {
+      "id": "shadow_bolt",
+      "name": "Shadow Bolt",
+      "type": "Shadow",
+      "energyCost": 0,
+      "manaCost": 1,
+      "levelRequired": 1,
+      "target": "single",
+      "price": 50,
+      "description": "15 shadow damage to one enemy."
+    },
+    {
+      "id": "nightfall",
+      "name": "Nightfall",
+      "type": "Shadow",
+      "energyCost": 0,
+      "manaCost": 2,
+      "levelRequired": 1,
+      "target": "all",
+      "price": 55,
+      "description": "20 shadow damage to all enemies."
+    },
+    {
+      "id": "void_bind",
+      "name": "Void Bind",
+      "type": "Shadow",
+      "energyCost": 0,
+      "manaCost": 2,
+      "levelRequired": 2,
+      "target": "single",
+      "price": 80,
+      "description": "30 shadow damage and stun one enemy."
+    },
+    {
+      "id": "abyssal_storm",
+      "name": "Abyssal Storm",
+      "type": "Shadow",
+      "energyCost": 0,
+      "manaCost": 3,
+      "levelRequired": 3,
+      "target": "all",
+      "price": 110,
+      "description": "40 shadow damage to all enemies."
+    },
+
+    {
+      "id": "holy_spark",
+      "name": "Holy Spark",
+      "type": "Light",
+      "energyCost": 0,
+      "manaCost": 1,
+      "levelRequired": 1,
+      "target": "single",
+      "price": 50,
+      "description": "15 light damage to one enemy."
+    },
+    {
+      "id": "radiant_wave",
+      "name": "Radiant Wave",
+      "type": "Light",
+      "energyCost": 0,
+      "manaCost": 2,
+      "levelRequired": 1,
+      "target": "all",
+      "price": 55,
+      "description": "20 light damage to all enemies."
+    },
+    {
+      "id": "smite",
+      "name": "Smite",
+      "type": "Light",
+      "energyCost": 0,
+      "manaCost": 2,
+      "levelRequired": 2,
+      "target": "single",
+      "price": 80,
+      "description": "30 light damage and stun one enemy."
+    },
+    {
+      "id": "heavenly_wrath",
+      "name": "Heavenly Wrath",
+      "type": "Light",
+      "energyCost": 0,
+      "manaCost": 3,
+      "levelRequired": 3,
+      "target": "all",
+      "price": 110,
+      "description": "40 light damage to all enemies."
+    },
+
+    {
+      "id": "frost_bolt",
+      "name": "Frost Bolt",
+      "type": "Ice",
+      "energyCost": 0,
+      "manaCost": 1,
+      "levelRequired": 1,
+      "target": "single",
+      "price": 50,
+      "description": "15 ice damage to one enemy."
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "type": "Ice",
+      "energyCost": 0,
+      "manaCost": 2,
+      "levelRequired": 1,
+      "target": "all",
+      "price": 55,
+      "description": "20 ice damage to all enemies."
+    },
+    {
+      "id": "ice_prison",
+      "name": "Ice Prison",
+      "type": "Ice",
+      "energyCost": 0,
+      "manaCost": 2,
+      "levelRequired": 2,
+      "target": "single",
+      "price": 80,
+      "description": "30 ice damage and stun one enemy."
+    },
+    {
+      "id": "absolute_zero",
+      "name": "Absolute Zero",
+      "type": "Ice",
+      "energyCost": 0,
+      "manaCost": 3,
+      "levelRequired": 3,
+      "target": "all",
+      "price": 110,
+      "description": "40 ice damage to all enemies."
+    },
+
+    {
+      "id": "electric_jolt",
+      "name": "Electric Jolt",
+      "type": "Lightning",
+      "energyCost": 0,
+      "manaCost": 1,
+      "levelRequired": 1,
+      "target": "single",
+      "price": 50,
+      "description": "15 lightning damage to one enemy."
+    },
+    {
+      "id": "chain_lightning",
+      "name": "Chain Lightning",
+      "type": "Lightning",
+      "energyCost": 0,
+      "manaCost": 2,
+      "levelRequired": 1,
+      "target": "all",
+      "price": 55,
+      "description": "20 lightning damage to all enemies."
+    },
+    {
+      "id": "thunder_crash",
+      "name": "Thunder Crash",
+      "type": "Lightning",
+      "energyCost": 0,
+      "manaCost": 2,
+      "levelRequired": 2,
+      "target": "single",
+      "price": 80,
+      "description": "30 lightning damage and stun one enemy."
+    },
+    {
+      "id": "storm_symphony",
+      "name": "Storm Symphony",
+      "type": "Lightning",
+      "energyCost": 0,
+      "manaCost": 3,
+      "levelRequired": 3,
+      "target": "all",
+      "price": 110,
+      "description": "40 lightning damage to all enemies."
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "$comment": "Single source of truth for type matchups. Edit here, not in the GDD or server.js. Each type beats exactly one type and loses to exactly one type. Cross-triangle matchups are always neutral (1x). Effectiveness multipliers: super effective 2x, neutral 1x, not very effective 0.5x.",
+  "effectiveness": {
+    "superEffective": 2.0,
+    "neutral": 1.0,
+    "notVeryEffective": 0.5
+  },
+  "triangles": [
+    {
+      "name": "Elemental",
+      "cycle": ["Water", "Fire", "Ice"],
+      "rationale": "Water extinguishes Fire, Fire melts Ice, Ice freezes Water."
+    },
+    {
+      "name": "Storm",
+      "cycle": ["Earth", "Lightning", "Wind"],
+      "rationale": "Earth grounds Lightning, Lightning charges and dominates Wind, Wind erodes Earth."
+    },
+    {
+      "name": "Mystical",
+      "cycle": ["Poison", "Light", "Shadow"],
+      "rationale": "Poison corrupts Light, Light banishes Shadow, Shadow smothers Poison."
+    }
+  ],
+  "types": {
+    "Fire": {
+      "mana": "Fire Mana",
+      "triangle": "Elemental",
+      "beats": "Ice",
+      "losesTo": "Water"
+    },
+    "Ice": {
+      "mana": "Ice Mana",
+      "triangle": "Elemental",
+      "beats": "Water",
+      "losesTo": "Fire"
+    },
+    "Water": {
+      "mana": "Water Mana",
+      "triangle": "Elemental",
+      "beats": "Fire",
+      "losesTo": "Ice"
+    },
+    "Earth": {
+      "mana": "Earth Mana",
+      "triangle": "Storm",
+      "beats": "Lightning",
+      "losesTo": "Wind"
+    },
+    "Lightning": {
+      "mana": "Lightning Mana",
+      "triangle": "Storm",
+      "beats": "Wind",
+      "losesTo": "Earth"
+    },
+    "Wind": {
+      "mana": "Wind Mana",
+      "triangle": "Storm",
+      "beats": "Earth",
+      "losesTo": "Lightning"
+    },
+    "Poison": {
+      "mana": "Poison Mana",
+      "triangle": "Mystical",
+      "beats": "Light",
+      "losesTo": "Shadow"
+    },
+    "Light": {
+      "mana": "Light Mana",
+      "triangle": "Mystical",
+      "beats": "Shadow",
+      "losesTo": "Poison"
+    },
+    "Shadow": {
+      "mana": "Shadow Mana",
+      "triangle": "Mystical",
+      "beats": "Poison",
+      "losesTo": "Light"
+    }
+  }
+}

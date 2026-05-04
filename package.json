@@ -1,0 +1,23 @@
+{
+  "name": "spellswing",
+  "version": "1.0.0",
+  "description": "SpellSwing multiplayer MVP",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1",
+    "phaser": "^3.90.0",
+    "phaser3-rex-plugins": "^1.80.20",
+    "socket.io": "^4.8.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
