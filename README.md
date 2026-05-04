@@ -34,6 +34,9 @@ The project is currently an MVP/work-in-progress game jam build focused on provi
 ![Multiplayer_Example](./MultiplayerExample.gif)  
 
 
+![Shop_Example](./ShopExample.gif)  
+
+
 ## Getting Started
 
 ### Prerequisites
