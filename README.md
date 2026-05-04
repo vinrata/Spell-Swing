@@ -30,6 +30,10 @@ The project is currently an MVP/work-in-progress game jam build focused on provi
 - **Client:** Phaser 3 + vanilla JavaScript
 - **Assets:** Sprite sheets, music, sound effects, UI art, backgrounds, relics, spell effects, and type icons under `Assets/`
 
+
+![Multiplayer_Example](./MultiplayerExample.gif)  
+
+
 ## Getting Started
 
 ### Prerequisites
